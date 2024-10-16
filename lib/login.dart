@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:carselling/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -18,10 +19,10 @@ class LoginPage extends StatelessWidget {
 }
 
 void initstate() async {
-    Response response =
-        await get('https://jsonplaceholder.typicode.com/todos/1' as Uri);
-    print(response.body);
-  }
+  Response response =
+      await get('https://jsonplaceholder.typicode.com/todos/1' as Uri);
+  print(response.body);
+}
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -32,8 +33,6 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   bool _obscureText = true;
-
-  
 
   void _togglePasswordVisibility() {
     setState(() {
@@ -113,7 +112,8 @@ class _LoginFormState extends State<LoginForm> {
           Center(
             child: GestureDetector(
               onTap: () {
-                // Handle sign up navigation
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Signup()));
               },
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -127,7 +127,7 @@ class _LoginFormState extends State<LoginForm> {
                     "Sign Up",
                     style: TextStyle(
                         color: Colors.red, fontWeight: FontWeight.bold),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -135,16 +135,5 @@ class _LoginFormState extends State<LoginForm> {
         ],
       ),
     );
-  }
-}
-
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:Hello;
-    )
-        
   }
 }
