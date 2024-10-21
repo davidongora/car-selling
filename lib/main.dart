@@ -1,7 +1,7 @@
+import 'package:carselling/login.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 // import 'package:carselling/login.dart';
-import 'package:carselling/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePage()),
+        MaterialPageRoute(builder: (context) => const LoginPage()),
       );
     });
   }
@@ -48,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/logo.jpeg', width: 100), // Add your logo here
+            Image.asset('assets/logo.jpeg', width: 100),
             const SizedBox(height: 20),
             const Text(
               'CarSelling',

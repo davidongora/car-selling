@@ -1,5 +1,5 @@
-import 'dart:developer';
 
+import 'package:carselling/navpage.dart';
 import 'package:carselling/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
@@ -83,10 +83,11 @@ class _LoginFormState extends State<LoginForm> {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              // Handle login logic
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const NavPage()));
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.orange,
               padding:
                   const EdgeInsets.symmetric(vertical: 15, horizontal: 140),
               shape: RoundedRectangleBorder(
@@ -104,7 +105,7 @@ class _LoginFormState extends State<LoginForm> {
               onPressed: () {},
               child: const Text(
                 'Forgot Password?',
-                style: TextStyle(color: Colors.blue),
+                style: TextStyle(color: Colors.black),
               ),
             ),
           ),
@@ -120,7 +121,7 @@ class _LoginFormState extends State<LoginForm> {
                 children: [
                   Text(
                     "Don't have an account? ",
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.black),
                   ),
                   SizedBox(width: 5),
                   Text(

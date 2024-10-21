@@ -1,4 +1,3 @@
-import 'package:carselling/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:carselling/login.dart';
 
