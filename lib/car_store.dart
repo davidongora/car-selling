@@ -73,10 +73,7 @@ class Features extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      ImageCard(
-                          carPlate: 'kba1',
-                          imageUrl:
-                              'https://i.postimg.cc/KYQ0X1M3/stroller.jpg'),
+                      ImageCard(carPlate: 'kba1', imageUrl: 'assets/mustang'),
                       SizedBox(width: 2),
                       ImageCard(
                           carPlate: 'kba8',
@@ -186,7 +183,18 @@ class ImageCard extends StatelessWidget {
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.network(imageUrl, height: 150),
+                  Image.network(
+                    imageUrl,
+                    height: 150,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return CircularProgressIndicator();
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return Icon(Icons
+                          .error); // Shows an error icon if the image fails to load
+                    },
+                  ),
                   const SizedBox(height: 10),
                   const Text('This is a high-quality car.'),
                   const SizedBox(height: 20),
